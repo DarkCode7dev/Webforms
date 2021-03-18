@@ -14,7 +14,7 @@ namespace Webforms
         {
 
         }
-
+// connected Ado
         protected void Button1_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=Batch;Integrated Security=True");

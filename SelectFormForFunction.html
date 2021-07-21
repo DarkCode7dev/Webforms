@@ -7,14 +7,21 @@
     <title>Document</title>
     <script>
         function SayHello() {
-            var name = document.forms[0].elements[0].value //Select karna form ko
+            //Select karna form ko
+           // var name = document.forms[0].elements[0].value 
+
+           //Select karna form ko method2
+          //  var name = document.forms["form1"].elements["txtName"].value 
+          
+           //Select karna form ko method3
+           var name = document.form1.txtName.value
             alert("Hello from function ")
             alert("By bye " + name)
         }
     </script>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="" name="form1" method="post">
         Name: <input type="text" name="txtName" id=""> <br>
         <input type="button" name="btnSayHello" value="Say Hello" onclick="SayHello()">
     </form>

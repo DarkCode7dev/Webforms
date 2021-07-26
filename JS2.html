@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function Calculate() {
+            var n1 = document.form1.txtN1.value;
+            var n2 = document.form1.txtN2.value;
+            var selInd = document.form1.ddlOperation.selectedIndex
+            var selOp = document.form1.ddlOperation.options[selInd]
+            switch (selOp.value) {
+                case "+":
+                    document.form1.txtResult.value = parseInt(n1) + parseInt(n2);
+                    break;
+                case "-":
+                    document.form1.txtResult.value = n1 - n2;
+                    break;
+                case "*":
+                    document.form1.txtResult.value = n1 * n2;
+                    break;
+                case "/":
+                    document.form1.txtResult.value = n1 / n2;
+                    break;
+            }
+        }
+
+        function SayHello() {
+            //Select karna form ko
+           // var name = document.forms[0].elements[0].value 
+
+           //Select karna form ko method2
+          //  var name = document.forms["form1"].elements["txtName"].value 
+          
+           //Select karna form ko method3
+           var name = document.form1.txtName.value
+            alert("Hello from function ")
+            alert("By bye " + name)
+        }
+        function CopyTextFromT1ToT2() {
+            var v1 = document.form1.t1.value;
+            if (document.form1.rbnCase[0].checked)
+                document.form1.t2.value = v1.toUpperCase();
+            else
+                document.form1.t2.value = v1.toLowerCase();
+            
+            //we can use onkeyprees and Onchange method also
+        }
+    </script>
+</head>
+<body>
+    <form action="" name="form1" method="post">
+        Name: <input type="text" name="txtName" id=""> <br>
+        <input type="button" name="btnSayHello" value="Say Hello" onclick="SayHello()">
+        <hr>
+        <input type="text" name="t1" value="" onkeyup="CopyTextFromT1ToT2()" />
+        <input type="radio" name="rbnCase" value="u" checked="checked" onclick="CopyTextFromT1ToT2()" /> To Upper
+        <input type="radio" name="rbnCase" value="l"  onclick="CopyTextFromT1ToT2()"/> To Lower
+
+        <input type="text" name="t2" value="" /> <br>
+
+
+        <input type="text" name="txtN1" value="10"/>
+        <input type="text" name="txtN2" value="2" />
+        <select name="ddlOperation" onchange="Calculate()">
+            <option value="+">Add</option>
+            <option value="-">Sub</option>
+            <option value="*">Mul</option>
+            <option value="/">Div</option>
+        </select>
+        <input type="text" name="txtResult" value="12" readonly="readonly"/>
+    </form>
+</body>
+</html>

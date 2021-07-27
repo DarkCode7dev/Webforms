@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ChangeDispay() {
+            if (document.forms[0].display[0].checked) {
+                document.getElementById("spn1").style.display= "show";
+            } else {
+                document.getElementById("spn1").style.display= "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="/" method="post">
+    <input type="radio" name="display" id="" value="Show" checked  onclick="ChangeDispay()"> Show
+    <input type="radio" name="display" value="Hide" id="" onclick="ChangeDispay()"> Hide
+    <br>
+    <span id="spn1">This is demo text</span>
+    </form>
+</body>
+</html>

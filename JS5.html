@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function CanSubmit() {
+            var pwd = document.forms[0].txtPassword.value
+            var cpwd = document.forms[0].txtConfirmPassword.value
+            if (pwd == cpwd)
+                return true;
+            else {
+                alert("Please ensure that Password and Confirm Password are same")
+                return false;
+            }
+        }
+        function CanDelete() {
+            return confirm("Are you sure?")
+        }
+        function ValidateMathForm() {
+            var n1 = document.forms[1].txtN1.value
+            var n2 = document.forms[1].txtN2.value
+            if (n1 == "" || n2 == "" || isNaN(n1) || isNaN(n2) ) {
+                alert("Please ensure that valid data is entered in both textboxes")
+                return false;
+            }
+            else
+                return true
+        }
+        function CheckDenominator() {
+            var n2 = document.forms[1].txtN2.value
+            if (n2 == 0) {
+                alert("Denominator cannot be zero")
+                return false;
+            }
+            else
+                return true;
+        }
+        
+    </script>
+</head>
+<body>
+    <form action="/" method="post" onsubmit="return CanSubmit()">
+        Password: <input type="password" name="txtPassword" value="" /><br />
+        Confirm Password: <input type="password" name="txtConfirmPassword" value="" /><br />
+        <input type="submit" name="btnSubmit" value="Submit" />
+        <hr />
+        <input type="submit" name="btnDelete" value="Delete" onclick="return confirm('Are you sure?')" />
+    </form>
+    <hr />
+    <form action="/" method="post" onsubmit="return ValidateMathForm()">
+        N1 <input type="text" name="txtN1" value="" /><br />
+        N2 <input type="text" name="txtN2" value="" /><br />
+        <input type="submit" name="btnAdd" value=" + " />
+        <input type="submit" name="btnSub" value=" - " />
+        <input type="submit" name="btnMul" value=" * " />
+        <input type="submit" name="btnDiv" value=" / " onclick="return CheckDenominator()" />
+    </form>
+</body>
+</html>

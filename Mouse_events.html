@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SwitchOn() {
+            document.images[0].src="https://energizerconnect.com/wp-content/uploads/2016/01/EAC2-1002-2.jpg";
+        }
+
+        function SwitchOff() {
+            document.images[0].src="https://2.bp.blogspot.com/-xayOXUxojYc/UbuqLB2e11I/AAAAAAAACkY/ehD_7PF26hc/s1600/light+bulb-+illum.jpg";
+        }
+
+
+        function Switch(state) {
+            var img = document.getElementById("img1")
+                if (state==1) {
+                    img.src ="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.7wacUYEgOv15A4no_MoAggHaM5%26pid%3DApi&f=1";
+                } else {
+                    img.src="https://images.fineartamerica.com/images-medium-large-5/1-incandescent-light-bulb-science-photo-library.jpg";
+                }
+        }
+
+
+        function Switch1(state,img) {
+            if (state==1) {
+                img.src ="https://banner2.kisspng.com/20180205/ikq/kisspng-incandescent-light-bulb-lighting-icon-bulb-off-png-transparent-image-5a78f8ea8b12c1.8396521115178774825697.jpg"
+            } else {
+                img.src ="https://www.freeiconspng.com/uploads/light-bulb-png-bulb-png1247-12.png";
+            }
+        }
+    </script>
+</head>
+<body>
+    <img src="https://2.bp.blogspot.com/-xayOXUxojYc/UbuqLB2e11I/AAAAAAAACkY/ehD_7PF26hc/s1600/light+bulb-+illum.jpg" 
+    alt="bulb" width="500" height="300"
+    onmouseover="SwitchOn()"  onmouseout="SwitchOff()">
+
+    <img id="img1" src="https://2.bp.blogspot.com/-xayOXUxojYc/UbuqLB2e11I/AAAAAAAACkY/ehD_7PF26hc/s1600/light+bulb-+illum.jpg" 
+    alt="bulb" width="200" height="200"
+    onmouseover="Switch(1)"  onmouseout="Switch(0)">
+
+    <img  src="https://2.bp.blogspot.com/-xayOXUxojYc/UbuqLB2e11I/AAAAAAAACkY/ehD_7PF26hc/s1600/light+bulb-+illum.jpg" 
+    alt="bulb" width="200" height="200"
+    onmouseover="Switch1(1,this)"  onmouseout="Switch1(0,this)">
+
+
+</body>
+</html>

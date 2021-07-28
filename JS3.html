@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function SwitchOn() {
+            document.images[0].src = "BulbOn.png";
+        }
+        function SwitchOff() {
+            document.images[0].src = "BulbOff.png"
+        }
+        function Switch(state) {
+            var img = document.getElementById("img1")
+            if (state == 1)
+                img.src = "BulbOn.png"
+            else
+                img.src = "BulbOff.png";
+        }
+        function Switch1(state,img) {
+            if (state == 1)
+                img.src = "BulbOn.png"
+            else
+                img.src = "BulbOff.png";
+        }
+    </script>
+</head>
+<body>
+    <img src="BulbOff.png" width="200" height="300" alt="bulb"
+            onmouseover="SwitchOn()" onmouseout="SwitchOff()" />
+    <img id="img1" src="BulbOff.png" width="200" height="300" alt="bulb" 
+            onmouseover="Switch(1)" onmouseout="Switch(0)" />
+    <img src="BulbOff.png" width="200" height="300" alt="bulb" 
+            onmouseover="Switch1(1,this)" onmouseout="Switch1(0,this)" />
+</body>
+</html>
